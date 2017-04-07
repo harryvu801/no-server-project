@@ -1,0 +1,57 @@
+.game-window {
+  height: 300px;
+  width: 450px;
+  position: relative; }
+
+.start {
+  height: 12px;
+  width: 125px;
+  background: url("imgs/start.png");
+  background-size: cover;
+  position: absolute;
+  top: 77%;
+  left: 23%; }
+
+.menu {
+  height: 60%;
+  width: 25%;
+  background-color: white;
+  border-style: outset;
+  border-width: thick;
+  position: absolute;
+  right: 0; }
+
+.mini-menu {
+  height: 5%;
+  width: 10%;
+  background-color: white;
+  border-style: outset;
+  border-width: thick;
+  position: absolute;
+  right: 0; }
+
+.home {
+  height: 100%;
+  width: 100%;
+  background: url("imgs/home-splash.png") center center no-repeat;
+  background-size: cover; }
+
+.bg-field {
+  height: 100%;
+  width: 100%;
+  background: url("imgs/main-field.png") center center no-repeat;
+  background-size: cover; }
+
+.bg-pokecenter {
+  height: 100%;
+  width: 100%;
+  background: url("imgs/pokecenter.png") center center no-repeat;
+  background-size: cover; }
+
+.bg-lab {
+  height: 100%;
+  width: 100%;
+  background: url("imgs/lab.png") center center no-repeat;
+  background-size: cover; }
+
+/*# sourceMappingURL=maps/styles.css.map */
