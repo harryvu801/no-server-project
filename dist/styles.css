@@ -1,3 +1,69 @@
+.bg-field {
+  height: 100%;
+  width: 100%;
+  background: url("../imgs/main-field.png") center center no-repeat;
+  background-size: cover; }
+
+.bg-grass-battle {
+  height: 70%;
+  width: 100%;
+  background: url("../imgs/grass-battle.png") center center no-repeat;
+  background-size: cover; }
+
+.wild-pokemon {
+  height: 60%;
+  position: absolute;
+  right: 7%;
+  top: -5%; }
+
+.my-pokemon {
+  height: 80%;
+  position: absolute;
+  bottom: 4%;
+  left: 0%; }
+
+.battle {
+  height: 30%;
+  width: 98%;
+  background-color: white;
+  border-style: outset;
+  border-width: thick;
+  display: flex; }
+
+.commands {
+  height: 100%;
+  width: 50%;
+  border-left-style: outset;
+  border-width: medium;
+  display: flex;
+  flex-wrap: wrap; }
+
+.fight-commands {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  border-right-style: outset;
+  border-width: medium; }
+
+.command {
+  height: 49%;
+  width: 49%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: outset;
+  border-width: thin; }
+
+.battle-text {
+  height: 100%;
+  width: 50%;
+  padding-left: 6%;
+  border-right-style: outset;
+  border-width: medium; }
+
 .game-window {
   height: 300px;
   width: 450px;
@@ -6,7 +72,7 @@
 .start {
   height: 12px;
   width: 125px;
-  background: url("imgs/start.png");
+  background: url("../imgs/start.png");
   background-size: cover;
   position: absolute;
   top: 77%;
@@ -19,7 +85,8 @@
   border-style: outset;
   border-width: thick;
   position: absolute;
-  right: 0; }
+  right: 0;
+  z-index: 1; }
 
 .mini-menu {
   height: 5%;
@@ -33,25 +100,54 @@
 .home {
   height: 100%;
   width: 100%;
-  background: url("imgs/home-splash.png") center center no-repeat;
-  background-size: cover; }
-
-.bg-field {
-  height: 100%;
-  width: 100%;
-  background: url("imgs/main-field.png") center center no-repeat;
+  background: url("../imgs/home-splash.png") center center no-repeat;
   background-size: cover; }
 
 .bg-pokecenter {
   height: 100%;
   width: 100%;
-  background: url("imgs/pokecenter.png") center center no-repeat;
+  background: url("../imgs/pokecenter.png") center center no-repeat;
   background-size: cover; }
 
 .bg-lab {
   height: 100%;
   width: 100%;
-  background: url("imgs/lab.png") center center no-repeat;
+  background: url("../imgs/lab.png") center center no-repeat;
   background-size: cover; }
+
+.ball1 {
+  height: 24px;
+  width: 24px;
+  background: url(../imgs/pokeball.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 25%;
+  right: 32%;
+  z-index: 0; }
+
+.ball2 {
+  height: 24px;
+  width: 24px;
+  background: url(../imgs/pokeball.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  z-index: 0; }
+
+.ball3 {
+  height: 24px;
+  width: 24px;
+  background: url(../imgs/pokeball.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 25%;
+  right: 18%;
+  z-index: 0; }
+
+.lab-pokemon {
+  position: absolute;
+  right: 15%;
+  top: 30%; }
 
 /*# sourceMappingURL=maps/styles.css.map */

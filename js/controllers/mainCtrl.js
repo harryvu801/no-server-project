@@ -1,6 +1,8 @@
-app.controller('mainCtrl', function ($scope) {
+app.controller('mainCtrl', function ($scope, $http) {
   $scope.broken = "working"
   $scope.menu = true;
+
+  var baseUrl = 'http://pokeapi.co/api/v2/pokemon/'
 
   $scope.showMenu = function(key) {
     console.log(key.key);
@@ -8,4 +10,19 @@ app.controller('mainCtrl', function ($scope) {
       $scope.menu = !$scope.menu;
     }
   }
+
+  $scope.setOwnPokemon = function (num) {
+    storedPokemon = num
+    return $http.get(baseUrl + num).then(function (response){
+      console.log(response.data);
+      $scope.myPokemon = response.data
+    })
+  }
+
+
+
+
+
 })
+
+var storedPokemon = 0

@@ -1,8 +1,10 @@
 <section class="bg-lab">
-  <a class="mini-menu" ng-show="menu" ng-click="menu = !menu">menu</a>
-  <nav class="menu" ng-hide="menu" ng-click="menu = !menu">
-    <a ui-sref="lab">Professor Oak's Lab</a><br>
-    <a ui-sref="pokecenter">PokeCenter</a><br>
-    <a ui-sref="main-field">Return to Field</a><br>
-  </nav>
+<nav-menu></nav-menu>
+
+<div class='ball1' ng-click="setOwnPokemon(1)"></div>
+<div class='ball2' ng-click="setOwnPokemon(4)"></div>
+<div class='ball3' ng-click="setOwnPokemon(7)"></div>
+
+<img class="lab-pokemon" ng-src="{{myPokemon.sprites.front_default}}">
+
 </section>

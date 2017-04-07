@@ -20,13 +20,75 @@ var app = angular.module('pokeApp', ['ui.router']).config(function ($stateProvid
     url: '/lab',
     templateUrl: "views/lab.html",
     controller: 'mainCtrl'
+  }).state('grass-battle', {
+    url: '/grass-battle',
+    templateUrl: "views/grass-battle.html",
+    controller: 'gbController'
   });
 });
 'use strict';
 
-app.controller('mainCtrl', function ($scope) {
+app.directive('battleMenu', function () {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/battle-menu.html',
+    controller: 'gbController'
+  };
+});
+'use strict';
+
+app.directive('navMenu', function () {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/nav-menu.html'
+  };
+});
+'use strict';
+
+app.controller('gbController', function ($scope, $http) {
+
+  var baseUrl = 'http://pokeapi.co/api/v2/pokemon/';
+
+  $scope.getRandomPokemon = function () {
+    console.log('button works');
+    return $http.get(baseUrl + Math.ceil(Math.random() * 721)).then(function (response) {
+      console.log('got response', response.data);
+      $scope.wildPokemon = response.data;
+    });
+  };
+
+  $scope.getRandomPokemon();
+
+  $scope.battlePokemon = function () {
+    return $http.get(baseUrl + storedPokemon).then(function (response) {
+      console.log(response.data.moves[0].move.name);
+      $scope.myPokemon = response.data;
+      $scope.moves = response.data.moves;
+    });
+  };
+
+  // $scope.battlePokemon = function () {
+  //   return $http.get(baseUrl + storedPokemon).then(function (response){
+  //     console.log(response.data);
+  //     $scope.myPokemon = response.data
+  //     $scope.moves = response.data.moves
+  //   })
+  // }
+
+  $scope.battlePokemon();
+
+  $scope.fight = true;
+  $scope.letsFight = function () {
+    $scope.fight = !$scope.fight;
+  };
+});
+'use strict';
+
+app.controller('mainCtrl', function ($scope, $http) {
   $scope.broken = "working";
   $scope.menu = true;
+
+  var baseUrl = 'http://pokeapi.co/api/v2/pokemon/';
 
   $scope.showMenu = function (key) {
     console.log(key.key);
@@ -34,5 +96,16 @@ app.controller('mainCtrl', function ($scope) {
       $scope.menu = !$scope.menu;
     }
   };
+
+  $scope.setOwnPokemon = function (num) {
+    storedPokemon = num;
+    return $http.get(baseUrl + num).then(function (response) {
+      console.log(response.data);
+      $scope.myPokemon = response.data;
+    });
+  };
 });
+
+var storedPokemon = 0;
+"use strict";
 //# sourceMappingURL=bundle.js.map

@@ -27,4 +27,10 @@ var app = angular.module('pokeApp', ['ui.router'])
         templateUrl:"views/lab.html",
         controller:'mainCtrl'
       })
+
+      .state('grass-battle', {
+        url:'/grass-battle',
+        templateUrl:"views/grass-battle.html",
+        controller:'gbController'
+      })
   })

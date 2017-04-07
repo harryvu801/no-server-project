@@ -1,0 +1,74 @@
+.bg-field {
+  height: 100%;
+  width: 100%;
+  background: url('../imgs/main-field.png') center center no-repeat;
+  background-size: cover;
+}
+
+.bg-grass-battle {
+  height: 70%;
+  width: 100%;
+  background: url('../imgs/grass-battle.png') center center no-repeat;
+  background-size: cover;
+}
+
+.wild-pokemon {
+  height:60%;
+  position: absolute;
+  right: 7%;
+  top:-5%;
+}
+
+.my-pokemon {
+  height:80%;
+  position: absolute;
+  bottom: 4%;
+  left:0%;
+}
+
+.battle {
+  height: 30%;
+  width: 98%;
+  background-color: white;
+  border-style: outset;
+  border-width: thick;
+  display: flex;
+}
+
+.commands {
+  height: 100%;
+  width: 50%;
+  border-left-style: outset;
+  border-width: medium;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fight-commands {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  border-right-style: outset;
+  border-width: medium;
+}
+
+.command {
+  height: 49%;
+  width: 49%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  border-style: outset;
+  border-width: thin;
+}
+
+.battle-text {
+  height: 100%;
+  width: 50%;
+  padding-left: 6%;
+  border-right-style: outset;
+  border-width: medium;
+}
