@@ -1,6 +1,15 @@
 <section class="bg-grass-battle">
+  <audio src="imgs/battle2.mp3" type="audio/mpeg" autoplay>
+
+  </audio>
+  <div class="wild-name">{{wildPokemon.name}}</div>
+    <img src="imgs/half-life.png" ng-show='life ===2' class="wild-life">
+    <img src="imgs/dead.png" ng-show="life > 2" class="wild-life">
   <img class="wild-pokemon" ng-src="{{wildPokemon.sprites.front_default}}">
 
   <img class="my-pokemon" ng-src="{{myPokemon.sprites.back_default}}">
+    <img ng-src="imgs/half-life.png" ng-show="life > 1" class="my-life">
+  <div class="myP-name">{{myPokemon.name}}</div>
+
 </section>
 <battle-menu></battle-menu>

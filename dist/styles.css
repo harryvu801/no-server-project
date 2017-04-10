@@ -4,11 +4,71 @@
   background: url("../imgs/main-field.png") center center no-repeat;
   background-size: cover; }
 
+.char-front {
+  position: absolute;
+  left: 36%;
+  top: 28%;
+  background-size: cover;
+  height: 13%; }
+
 .bg-grass-battle {
   height: 70%;
   width: 100%;
   background: url("../imgs/grass-battle.png") center center no-repeat;
   background-size: cover; }
+
+.random {
+  font-family: 'pokemon-font';
+  font-size: 11px;
+  letter-spacing: -1px;
+  position: absolute;
+  left: 22%;
+  top: 50%; }
+
+.battle-text {
+  height: 100%;
+  width: 50%;
+  padding: 2% 0 0 4%;
+  color: black;
+  font-family: 'pokemon-font';
+  font-size: 11px; }
+
+.battle {
+  height: 30%;
+  width: 100%;
+  background: url("../imgs/fight-commands.png");
+  background-size: cover;
+  font-size: 10px;
+  display: flex; }
+
+.commands {
+  height: 100%;
+  width: 50%;
+  background: url("../imgs/battle-menu.png");
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap; }
+
+.back {
+  height: 100%;
+  width: 50%;
+  background: url("../imgs/back.png");
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap; }
+
+.fight-commands {
+  height: 80%;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap; }
+
+.command {
+  height: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .wild-pokemon {
   height: 60%;
@@ -16,58 +76,79 @@
   right: 7%;
   top: -5%; }
 
+.wild-life {
+  height: 1.87%;
+  position: absolute;
+  left: 20%;
+  top: 16.8%; }
+
+.wild-name {
+  height: 5%;
+  width: 20%;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  position: absolute;
+  left: 9%;
+  top: 11%;
+  color: #555; }
+
 .my-pokemon {
   height: 80%;
   position: absolute;
-  bottom: 4%;
+  bottom: 10%;
   left: 0%; }
 
-.battle {
-  height: 30%;
-  width: 98%;
-  background-color: white;
-  border-style: outset;
-  border-width: thick;
-  display: flex; }
+.my-life {
+  height: 1.87%;
+  position: absolute;
+  left: 76.3%;
+  top: 56.2%; }
 
-.commands {
-  height: 100%;
-  width: 50%;
-  border-left-style: outset;
-  border-width: medium;
+.myP-name {
+  height: 5%;
+  width: 20%;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  position: absolute;
+  right: 15%;
+  bottom: 45%;
+  color: #555555; }
+
+@media (max-width: 600px) {
+  .myP-name
+.wild-name {
+    font-size: 7px; }
+  .random,
+  .battle-text {
+    font-size: 8px; } }
+
+body {
+  background: url("../imgs/background.jpg") center center no-repeat;
+  background-size: cover;
   display: flex;
-  flex-wrap: wrap; }
+  justify-content: center; }
 
-.fight-commands {
-  height: 100%;
+.console {
+  height: 100vh;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  border-right-style: outset;
-  border-width: medium; }
-
-.command {
-  height: 49%;
-  width: 49%;
+  max-width: 1000px;
+  background: url("../imgs/big-gameboy.png") center no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border-style: outset;
-  border-width: thin; }
-
-.battle-text {
-  height: 100%;
-  width: 50%;
-  padding-left: 6%;
-  border-right-style: outset;
-  border-width: medium; }
+  align-items: center; }
 
 .game-window {
   height: 300px;
   width: 450px;
-  position: relative; }
+  position: relative;
+  margin-bottom: 2%; }
+
+@font-face {
+  font-family: 'pokemon-font';
+  src: url("../fonts/pokemon-font.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/pokemon-font.eot?#iefix") format("embedded-opentype"), url("../node_modules/pokemon-font/fonts/pokemon-font.woff2") format("woff2"), url("../node_modules/pokemon-font/fonts/pokemon-font.woff") format("woff"), url("../node_modules/pokemon-font/fonts/pokemon-font.ttf") format("truetype"); }
 
 .start {
   height: 12px;
@@ -79,23 +160,33 @@
   left: 23%; }
 
 .menu {
-  height: 60%;
+  height: 47%;
   width: 25%;
-  background-color: white;
-  border-style: outset;
-  border-width: thick;
+  background: url("../imgs/nav-menu.png");
+  background-size: cover;
   position: absolute;
+  color: black;
   right: 0;
-  z-index: 1; }
+  z-index: 1;
+  font-family: 'pokemon-font';
+  font-size: 11px; }
+
+.menu-item {
+  line-height: 2.5;
+  margin-left: 13%;
+  text-decoration: none;
+  letter-spacing: -1px; }
 
 .mini-menu {
-  height: 5%;
-  width: 10%;
+  height: 15%;
+  width: 3%;
   background-color: white;
-  border-style: outset;
-  border-width: thick;
+  -webkit-border-radius: 50% 0 0 50%;
+  border-radius: 50% 0 0 50%;
   position: absolute;
-  right: 0; }
+  right: 0;
+  top: 15%;
+  font-size: 15px; }
 
 .home {
   height: 100%;
@@ -103,10 +194,23 @@
   background: url("../imgs/home-splash.png") center center no-repeat;
   background-size: cover; }
 
+.char-back {
+  position: absolute;
+  left: 48%;
+  top: 38%;
+  background-size: cover;
+  height: 13%; }
+
 .bg-pokecenter {
   height: 100%;
   width: 100%;
   background: url("../imgs/pokecenter.png") center center no-repeat;
+  background-size: cover; }
+
+.bg-pokemart {
+  height: 100%;
+  width: 100%;
+  background: url("../imgs/Pokemart.png") center center no-repeat;
   background-size: cover; }
 
 .bg-lab {
@@ -114,6 +218,16 @@
   width: 100%;
   background: url("../imgs/lab.png") center center no-repeat;
   background-size: cover; }
+
+.lab-text {
+  height: 27%;
+  width: 100%;
+  background: url("../imgs/fight-commands.png");
+  background-size: cover;
+  position: absolute;
+  font-family: 'pokemon-font';
+  font-size: 12px;
+  bottom: 0; }
 
 .ball1 {
   height: 24px;
@@ -124,6 +238,11 @@
   top: 25%;
   right: 32%;
   z-index: 0; }
+
+.ball1:hover,
+.ball2:hover,
+.ball3:hover {
+  cursor: pointer; }
 
 .ball2 {
   height: 24px;
@@ -149,5 +268,23 @@
   position: absolute;
   right: 15%;
   top: 30%; }
+
+@media (max-width: 600px) {
+  .console {
+    height: 680px;
+    width: 360px;
+    background: url("../imgs/small-gameboy.png") center no-repeat;
+    background-size: cover;
+    align-items: flex-start; }
+  .game-window {
+    height: 180px;
+    width: 265px;
+    position: relative;
+    margin-bottom: 2%;
+    margin-left: 3%;
+    margin-top: 15%; }
+  .menu,
+  .lab-text {
+    font-size: 8px; } }
 
 /*# sourceMappingURL=maps/styles.css.map */

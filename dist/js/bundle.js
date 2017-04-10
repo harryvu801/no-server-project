@@ -54,32 +54,38 @@ app.controller('gbController', function ($scope, $http) {
     return $http.get(baseUrl + Math.ceil(Math.random() * 721)).then(function (response) {
       console.log('got response', response.data);
       $scope.wildPokemon = response.data;
+      $scope.move2 = response.data.moves[2].move.name;
     });
-  };
+  }();
 
-  $scope.getRandomPokemon();
+  $scope.life = 1;
+
+  $scope.fight = function (move) {
+    console.log('clicked');
+    $scope.moveUsed = move;
+    $scope.life++;
+    $scope.show++;
+
+    if ($scope.life < 2) {
+      $scope.life = 1;
+    }
+  };
 
   $scope.battlePokemon = function () {
-    return $http.get(baseUrl + storedPokemon).then(function (response) {
-      console.log(response.data.moves[0].move.name);
+    return $http.get(baseUrl + sessionStorage.getItem('key')).then(function (response) {
+      console.log(response.data);
       $scope.myPokemon = response.data;
       $scope.moves = response.data.moves;
+      $scope.life = 1;
     });
-  };
+  }();
 
-  // $scope.battlePokemon = function () {
-  //   return $http.get(baseUrl + storedPokemon).then(function (response){
-  //     console.log(response.data);
-  //     $scope.myPokemon = response.data
-  //     $scope.moves = response.data.moves
-  //   })
-  // }
-
-  $scope.battlePokemon();
-
-  $scope.fight = true;
+  $scope.show = 0;
   $scope.letsFight = function () {
-    $scope.fight = !$scope.fight;
+    $scope.show++;
+  };
+  $scope.back = function () {
+    $scope.show = 0;
   };
 });
 'use strict';
@@ -98,14 +104,12 @@ app.controller('mainCtrl', function ($scope, $http) {
   };
 
   $scope.setOwnPokemon = function (num) {
-    storedPokemon = num;
     return $http.get(baseUrl + num).then(function (response) {
       console.log(response.data);
       $scope.myPokemon = response.data;
-    });
+      sessionStorage.setItem('key', num);
+    })();
   };
 });
-
-var storedPokemon = 0;
 "use strict";
 //# sourceMappingURL=bundle.js.map

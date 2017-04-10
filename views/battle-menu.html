@@ -1,27 +1,33 @@
 <nav class="battle">
 
   <div class="battle-text">
-    <p ng-show="fight">this is a really long test string with the purpose of styling the dialogue box</p>
-    <div  ng-hide="fight" class="fight-commands">
-      <a class="command">{{moves[0].move.name}}</a>
-      <a class="command">{{moves[1].move.name}}</a>
-      <a class="command">{{moves[2].move.name}}</a>
-      <a class="command">{{moves[3].move.name}}</a>
+    <div ng-show="show === 0" class="fight-commands">
+      <p>What will {{myPokemon.name}} do?</p>
+    </div>
+    <div ng-show="show > 1" class="fight-commands">
+      <p>{{myPokemon.name}} used {{moveUsed}}! </p>
+      <p>{{wildPokemon.name}} used {{move2}}!</p>
+    </div>
+    <div  ng-show="show === 1" class="fight-commands">
+      <a class="command">-</a>
+      <a class="command">-</a>
+      <a class="command" ng-click="fight(moves[4].move.name)">{{moves[4].move.name}}</a>
+      <a class="command" ng-click="fight(moves[5].move.name)">{{moves[5].move.name}}</a>
     </div>
 
   </div>
 
-  <div class="commands" ng-show="fight">
-    <a class="command" ng-click="letsFight()">Fight</a>
-    <a class="command">Pokemon</a>
-    <a class="command">Bag</a>
-    <a class="command" ui-sref="main-field">Run</a>
+  <div class="commands" ng-show="show === 0">
+    <a class="command" ng-click="letsFight()"></a>
+    <a class="command"></a>
+    <a class="command"></a>
+    <a class="command" ui-sref="main-field"></a>
   </div>
-  <div class="commands" ng-hide="fight">
+  <div class="back" ng-hide="show === 0">
     <a class="command"></a>
     <a class="command"></a><br>
     <a class="command"></a>
-    <a class="command" ng-click="letsFight()">Back</a>
+    <a class="command" ng-click="back()"></a>
   </div>
 
 </nav>

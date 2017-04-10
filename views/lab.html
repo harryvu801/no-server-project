@@ -1,10 +1,20 @@
 <section class="bg-lab">
 <nav-menu></nav-menu>
 
+<audio src="imgs/oak-research-lab.mp3" type="audio/mpeg" autoplay>
+
+</audio>
+
 <div class='ball1' ng-click="setOwnPokemon(1)"></div>
 <div class='ball2' ng-click="setOwnPokemon(4)"></div>
 <div class='ball3' ng-click="setOwnPokemon(7)"></div>
 
-<img class="lab-pokemon" ng-src="{{myPokemon.sprites.front_default}}">
+<img src="imgs/char-back.png" class="char-back">
+<img src="imgs/char-right.png" ng-show="myPokemon" class="char-back">
 
+<img class="lab-pokemon" ng-src="{{myPokemon.sprites.front_default}}">
+<div class="lab-text">
+  <p ng-hide="myPokemon" style="margin-left:3%;">Professor Oak: Go Ahead, choose your first Pokemon. If you don't like him, come back and choose a differnt one. </p>
+  <p ng-show="myPokemon" style="margin-left:3%;">...{{myPokemon.name}}? Great choice!</p>
+</div>
 </section>

@@ -12,11 +12,11 @@ app.controller('mainCtrl', function ($scope, $http) {
   }
 
   $scope.setOwnPokemon = function (num) {
-    storedPokemon = num
     return $http.get(baseUrl + num).then(function (response){
       console.log(response.data);
       $scope.myPokemon = response.data
-    })
+      sessionStorage.setItem('key', num);
+    })();
   }
 
 
@@ -24,5 +24,3 @@ app.controller('mainCtrl', function ($scope, $http) {
 
 
 })
-
-var storedPokemon = 0
