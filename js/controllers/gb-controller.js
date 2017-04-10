@@ -11,42 +11,27 @@ var baseUrl = 'http://pokeapi.co/api/v2/pokemon/'
     })
   }();
 
-  $scope.life = 1
-
-  $scope.fight = function (move) {
-    console.log('clicked');
-    $scope.moveUsed = move
-    $scope.life++;
-    $scope.show++
-
-
-    if ($scope.life < 2) {
-      $scope.life = 1;
-    }
-  }
-
-
-
-
   $scope.battlePokemon = function () {
     return $http.get(baseUrl + sessionStorage.getItem('key')).then(function (response){
       console.log(response.data);
-      $scope.myPokemon = response.data
-      $scope.moves = response.data.moves
-      $scope.life = 1;
+      $scope.myPokemon = response.data;
+      $scope.moves = response.data.moves;
+      $scope.show = 2;
     })
   }();
 
-
-
-
-  $scope.show = 0;
   $scope.letsFight = function () {
     $scope.show++;
   }
-  $scope.back = function () {
-    $scope.show = 0;
+
+
+  $scope.fight = function(move) {
+    console.log('clicked');
+    $scope.moveUsed = move
+    $scope.show++;
   }
 
-
+  $scope.back = function() {
+    $scope.show--;
+  }
 })
