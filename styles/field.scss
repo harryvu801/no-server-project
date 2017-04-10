@@ -18,7 +18,9 @@
   width: 100%;
   background: url('../imgs/grass-battle.png') center center no-repeat;
   background-size: cover;
+  -webkit-animation: fadein 3s;
 }
+
 .random {
   font-family: 'pokemon-font';
   font-size: 11px;
@@ -45,6 +47,7 @@
   background-size: cover;
   font-size: 10px;
   display: flex;
+  -webkit-animation: fadein 3s;
 
 }
 
@@ -134,7 +137,7 @@ top: 56.2%;
 
 @media (max-width: 600px) {
 
-  .myP-name
+  .myP-name,
   .wild-name {
     font-size: 7px;
   }
@@ -143,4 +146,9 @@ top: 56.2%;
   .battle-text {
     font-size: 8px;
   }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

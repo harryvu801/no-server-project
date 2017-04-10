@@ -15,7 +15,8 @@
   height: 70%;
   width: 100%;
   background: url("../imgs/grass-battle.png") center center no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  -webkit-animation: fadein 3s; }
 
 .random {
   font-family: 'pokemon-font';
@@ -39,7 +40,8 @@
   background: url("../imgs/fight-commands.png");
   background-size: cover;
   font-size: 10px;
-  display: flex; }
+  display: flex;
+  -webkit-animation: fadein 3s; }
 
 .commands {
   height: 100%;
@@ -115,12 +117,18 @@
   color: #555555; }
 
 @media (max-width: 600px) {
-  .myP-name
-.wild-name {
+  .myP-name,
+  .wild-name {
     font-size: 7px; }
   .random,
   .battle-text {
     font-size: 8px; } }
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 body {
   background: url("../imgs/background.jpg") center center no-repeat;
@@ -192,7 +200,8 @@ body {
   height: 100%;
   width: 100%;
   background: url("../imgs/home-splash.png") center center no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  -webkit-animation: fadein 3s; }
 
 .char-back {
   position: absolute;
