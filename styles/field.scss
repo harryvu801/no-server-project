@@ -9,8 +9,11 @@
   position: absolute;
   left: 36%;
   top: 28%;
+  background: url('../imgs/char-front.png');
   background-size: cover;
   height: 13%;
+  width: 6%;
+  -webkit-animation: walkdown 2s
 }
 
 .bg-grass-battle {
@@ -90,6 +93,8 @@
   position: absolute;
   right: 7%;
   top:-5%;
+  visibility:hidden;
+  -webkit-animation:slideInLeft 1.5s ease 4.5s 1 normal forwards;
 }
 
 .wild-life {
@@ -115,6 +120,8 @@
   position: absolute;
   bottom: 10%;
   left:0%;
+  visibility: hidden;
+  -webkit-animation:slideInRight 1.5s ease 4.5s 1 normal forwards;
 }
 
 .my-life {
@@ -135,6 +142,14 @@ top: 56.2%;
   color: #555555;
 }
 
+.no-pokemon {
+  height: 45%;
+  position: absolute;
+  bottom: 30%;
+  left: 13%;
+  visibility: hidden;
+  -webkit-animation:slideInRight 1.5s ease 4.5s 1 normal forwards;
+}
 
 @media (max-width: 600px) {
 
@@ -147,9 +162,4 @@ top: 56.2%;
   .battle-text {
     font-size: 8px;
   }
-}
-
-@keyframes fadein {
-     from {opacity: 0}
-     to {opacity: 1}
 }

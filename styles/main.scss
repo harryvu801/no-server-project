@@ -1,15 +1,26 @@
 body {
-  background: url("../imgs/background.jpg") center center no-repeat;
+  height: 100vh;
+  background: url("../imgs/background2.png") center center no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+
 }
 
 
 .console {
-  height: 100vh;
+  min-height: 600px;
+  max-height: 680px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1050px;
   background: url('../imgs/big-gameboy.png') center no-repeat;
   background-size: cover;
   display: flex;
@@ -21,17 +32,17 @@ body {
   height: 300px;
   width: 450px;
   position: relative;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
 }
 
 
 @font-face {
   font-family: 'pokemon-font';
-  src: url('../fonts/pokemon-font.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/pokemon-font.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../node_modules/pokemon-font/fonts/pokemon-font.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../node_modules/pokemon-font/fonts/pokemon-font.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../node_modules/pokemon-font/fonts/pokemon-font.ttf')  format('truetype') /* Safari, Android, iOS */
+  src: url('../pokemon-font/fonts/pokemon-font.eot'); /* IE9 Compat Modes */
+  src: url('../pokemon-font/fonts/pokemon-font.otf') format('embedded-opentype'), /* IE6-IE8 */
+       url('../pokemon-font/fonts/pokemon-font.ttf') format('woff2'), /* Super Modern Browsers */
+       url('../pokemon-font/fonts/pokemon-font.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../pokemon-font/fonts/pokemon-font.woff2')  format('truetype') /* Safari, Android, iOS */
   /* There is no SVG version of this font due to support being dropped in SVG 2 */
 }
 
@@ -91,8 +102,19 @@ body {
   position: absolute;
   left: 48%;
   top: 38%;
-  background-size: cover;
   height: 13%;
+  width: 6%;
+  background: url("../imgs/char-back.png");
+  background-size: cover;
+  -webkit-animation: walkup 2s
+}
+
+.char-right {
+  position: absolute;
+  left: 48%;
+  top: 38%;
+  height: 13%;
+  width: 6%;
 }
 
 .bg-pokecenter {
@@ -171,6 +193,8 @@ body {
   right: 15%;
   top:30%;
 }
+
+
 
 @media (max-width: 600px) {
   .console {

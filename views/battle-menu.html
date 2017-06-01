@@ -1,8 +1,9 @@
 <nav class="battle">
 
   <div class="battle-text">
-    <div ng-show="show ===2" class="fight-commands">
+    <div ng-show="show ===2 && myPokemon" class="fight-commands">
       <p>What will {{myPokemon.name}} do?</p>
+
     </div>
 
     <div ng-show="show === 4" class="fight-commands">

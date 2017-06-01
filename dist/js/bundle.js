@@ -55,6 +55,7 @@ app.controller('gbController', function ($scope, $http) {
       console.log('got response', response.data);
       $scope.wildPokemon = response.data;
       $scope.move2 = response.data.moves[2].move.name;
+      $scope.show = 2;
     });
   }();
 
@@ -63,7 +64,6 @@ app.controller('gbController', function ($scope, $http) {
       console.log(response.data);
       $scope.myPokemon = response.data;
       $scope.moves = response.data.moves;
-      $scope.show = 2;
     });
   }();
 

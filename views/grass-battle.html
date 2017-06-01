@@ -8,6 +8,8 @@
     <img src="imgs/dead.png" ng-show="show > 5" class="wild-life">
   <img class="wild-pokemon" ng-hide="show > 5" ng-src="{{wildPokemon.sprites.front_default}}">
 
+<img class="no-pokemon" src="imgs/no-pokemon.png" ng-if='!myPokemon'>
+
   <img class="my-pokemon" ng-src="{{myPokemon.sprites.back_default}}">
     <img ng-src="imgs/half-life.png" ng-show="show > 3" class="my-life">
   <div class="myP-name">{{myPokemon.name}}</div>

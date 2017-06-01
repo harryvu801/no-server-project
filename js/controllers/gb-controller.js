@@ -6,8 +6,9 @@ var baseUrl = 'http://pokeapi.co/api/v2/pokemon/'
     console.log('button works');
     return $http.get(baseUrl + Math.ceil(Math.random() * 721)).then(function (response){
       console.log('got response', response.data);
-      $scope.wildPokemon = response.data
-      $scope.move2= response.data.moves[2].move.name
+      $scope.wildPokemon = response.data;
+      $scope.move2= response.data.moves[2].move.name;
+      $scope.show = 2;
     })
   }();
 
@@ -16,7 +17,6 @@ var baseUrl = 'http://pokeapi.co/api/v2/pokemon/'
       console.log(response.data);
       $scope.myPokemon = response.data;
       $scope.moves = response.data.moves;
-      $scope.show = 2;
     })
   }();
 

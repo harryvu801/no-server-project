@@ -1,3 +1,118 @@
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible; } }
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible; } }
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft; }
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible; } }
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible; } }
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes walkup {
+  0% {
+    background: url("../imgs/right.png");
+    top: 80%;
+    background-size: cover; }
+  20% {
+    background: url("../imgs/left.png");
+    top: 70%;
+    background-size: cover; }
+  40% {
+    background: url("../imgs/right.png");
+    top: 60%;
+    background-size: cover; }
+  60% {
+    background: url("../imgs/left.png");
+    top: 50%;
+    background-size: cover; }
+  80% {
+    background: url("../imgs/right.png");
+    top: 40%;
+    background-size: cover; }
+  100% {
+    background: url("../imgs/char-back.png");
+    top: 38%;
+    background-size: cover; } }
+
+@keyframes walkdown {
+  0% {
+    background: url("../imgs/down-right.png");
+    top: 7%;
+    left: 66%;
+    background-size: cover; }
+  20% {
+    background: url("../imgs/down-left.png");
+    top: 17%;
+    left: 66%;
+    background-size: cover; }
+  40% {
+    background: url("../imgs/down-right.png");
+    top: 28%;
+    left: 66%;
+    background-size: cover; }
+  60% {
+    background: url("../imgs/char-left.png");
+    top: 28%;
+    left: 56%;
+    width: 7%;
+    background-size: cover; }
+  80% {
+    background: url("../imgs/char-left2.png");
+    top: 28%;
+    left: 46%;
+    width: 7%;
+    background-size: cover; }
+  100% {
+    background: url("../imgs/char-left.png");
+    top: 28%;
+    left: 36%;
+    width: 7%;
+    background-size: cover; } }
+
 .bg-field {
   height: 100%;
   width: 100%;
@@ -8,8 +123,11 @@
   position: absolute;
   left: 36%;
   top: 28%;
+  background: url("../imgs/char-front.png");
   background-size: cover;
-  height: 13%; }
+  height: 13%;
+  width: 6%;
+  -webkit-animation: walkdown 2s; }
 
 .bg-grass-battle {
   height: 70%;
@@ -78,7 +196,9 @@
   height: 60%;
   position: absolute;
   right: 7%;
-  top: -5%; }
+  top: -5%;
+  visibility: hidden;
+  -webkit-animation: slideInLeft 1.5s ease 4.5s 1 normal forwards; }
 
 .wild-life {
   height: 1.87%;
@@ -100,7 +220,9 @@
   height: 80%;
   position: absolute;
   bottom: 10%;
-  left: 0%; }
+  left: 0%;
+  visibility: hidden;
+  -webkit-animation: slideInRight 1.5s ease 4.5s 1 normal forwards; }
 
 .my-life {
   height: 1.87%;
@@ -118,6 +240,14 @@
   bottom: 45%;
   color: #555555; }
 
+.no-pokemon {
+  height: 45%;
+  position: absolute;
+  bottom: 30%;
+  left: 13%;
+  visibility: hidden;
+  -webkit-animation: slideInRight 1.5s ease 4.5s 1 normal forwards; }
+
 @media (max-width: 600px) {
   .myP-name,
   .wild-name {
@@ -126,22 +256,26 @@
   .battle-text {
     font-size: 8px; } }
 
-@keyframes fadein {
-  from {
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-
 body {
-  background: url("../imgs/background.jpg") center center no-repeat;
+  height: 100vh;
+  background: url("../imgs/background2.png") center center no-repeat;
   background-size: cover;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
 
 .console {
-  height: 100vh;
+  min-height: 600px;
+  max-height: 680px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1050px;
   background: url("../imgs/big-gameboy.png") center no-repeat;
   background-size: cover;
   display: flex;
@@ -152,13 +286,13 @@ body {
   height: 300px;
   width: 450px;
   position: relative;
-  margin-bottom: 2%; }
+  margin-bottom: 4%; }
 
 @font-face {
   font-family: 'pokemon-font';
-  src: url("../fonts/pokemon-font.eot");
+  src: url("../pokemon-font/fonts/pokemon-font.eot");
   /* IE9 Compat Modes */
-  src: url("../fonts/pokemon-font.eot?#iefix") format("embedded-opentype"), url("../node_modules/pokemon-font/fonts/pokemon-font.woff2") format("woff2"), url("../node_modules/pokemon-font/fonts/pokemon-font.woff") format("woff"), url("../node_modules/pokemon-font/fonts/pokemon-font.ttf") format("truetype"); }
+  src: url("../pokemon-font/fonts/pokemon-font.otf") format("embedded-opentype"), url("../pokemon-font/fonts/pokemon-font.ttf") format("woff2"), url("../pokemon-font/fonts/pokemon-font.woff") format("woff"), url("../pokemon-font/fonts/pokemon-font.woff2") format("truetype"); }
 
 .start {
   height: 12px;
@@ -188,15 +322,15 @@ body {
   letter-spacing: -1px; }
 
 .mini-menu {
-  height: 15%;
-  width: 3%;
+  font-family: 'pokemon-font';
+  height: 10%;
+  width: 15%;
   background-color: white;
-  -webkit-border-radius: 50% 0 0 50%;
-  border-radius: 50% 0 0 50%;
+  border-radius: 15px;
   position: absolute;
   right: 0;
-  top: 15%;
-  font-size: 15px; }
+  top: 0;
+  font-size: 12px; }
 
 .home {
   height: 100%;
@@ -209,8 +343,18 @@ body {
   position: absolute;
   left: 48%;
   top: 38%;
+  height: 13%;
+  width: 6%;
+  background: url("../imgs/char-back.png");
   background-size: cover;
-  height: 13%; }
+  -webkit-animation: walkup 2s; }
+
+.char-right {
+  position: absolute;
+  left: 48%;
+  top: 38%;
+  height: 13%;
+  width: 6%; }
 
 .bg-pokecenter {
   height: 100%;
